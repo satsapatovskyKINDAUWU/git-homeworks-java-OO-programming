@@ -4,7 +4,7 @@ import java.util.Scanner;
 //1.Дано два числа a та b. Знайдіть гіпотенузу трикутника із заданими катетами.
 //щоб перевірити завдання введіть набір команд:
 //
-//double answer = TaskOne();System.out.println("Гіпотенуза:"+answer);
+//String Answer = TaskOne();System.out.println(Answer);
 
 
 //2.Напишіть програму, яка зчитує ціле число та виводить текст, аналогічний наведеному у
@@ -31,17 +31,17 @@ public class PracticeHomework1 {
         //вставляти команди нижче
         // \/ \/ \/ \/ \/ \/
 
-
-
+        // /\ /\ /\ /\ /\ /\
+        //вставляти команди вище
     }
 
-    public static double TaskOne(){
+    public static String TaskOne(){
         Scanner in = new Scanner(System.in);
         double a,b;
         int correct = 0;
 
         do {
-            System.out.println("Введіть перше число(числа цілі, позитивні, не перевищують 1000)");
+            System.out.println("Введіть перший катет трикутника(числа цілі, позитивні, не перевищують 1000)");
             while (!in.hasNextDouble()) {
                 System.err.println("\tСталася помилка! \nНекоректна вхідна інформація,повторіть спробу");
                 in.next();
@@ -55,7 +55,7 @@ public class PracticeHomework1 {
 
 
         do {
-            System.out.println("Введіть друге число(числа цілі, позитивні, не перевищують 1000).");
+            System.out.println("Введіть другий катет трикутника(числа цілі, позитивні, не перевищують 1000).");
             while (!in.hasNextDouble()) {
                 System.err.println("\tСталася помилка! \nНекоректна вхідна інформація,повторіть спробу");
                 in.next();
@@ -64,8 +64,11 @@ public class PracticeHomework1 {
             b = in.nextDouble();
             if(b <=0 || b>1000){correct=0;}
         }while (correct==0);
+        double c = Math.sqrt((a*a)+(b*b));
 
-        return (Math.sqrt((a*a)+(b*b)));
+        
+        
+        return "Гіпотенуза трикутника: "+c;
     }
 
     public static String TaskTwo(){
@@ -74,7 +77,7 @@ public class PracticeHomework1 {
         int correct = 0;
 
         do {
-            System.out.println("Введіть число(ціле число, за модулем, що не перевищує 10000)");
+            System.out.println("Введіть число для якого ви хочете дізнатись число спереду і число позаду(ціле число, за модулем, що не перевищує 10000)");
             while (!in.hasNextInt()) {
                 System.err.println("\tСталася помилка! \nНекоректна вхідна інформація,повторіть спробу");
                 in.next();
@@ -93,7 +96,7 @@ public class PracticeHomework1 {
         int correct = 0;
 
         do {
-            System.out.println("Введіть кількість школярів(ціле число)");
+            System.out.println("Введіть кількість школярів між якими ділиться яблуко(ціле число)");
             while (!in.hasNextInt()) {
                 System.err.println("\tСталася помилка! \nНекоректна вхідна інформація,повторіть спробу");
                 in.next();
@@ -106,7 +109,7 @@ public class PracticeHomework1 {
         correct=0;
 
         do {
-            System.out.println("Введіть кількість яблук(ціле число)");
+            System.out.println("Введіть кількість яблук що ділиться поміж школярами(ціле число)");
             while (!in.hasNextInt()) {
                 System.err.println("\tСталася помилка! \nНекоректна вхідна інформація,повторіть спробу");
                 in.next();
