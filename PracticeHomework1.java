@@ -42,12 +42,12 @@ public class PracticeHomework1 {
 
         do {
             System.out.println("Введіть перший катет трикутника(числа цілі, позитивні, не перевищують 1000)");
-            while (!in.hasNextDouble()) {
+            while (!in.hasNextLong()) {
                 System.err.println("\tСталася помилка! \nНекоректна вхідна інформація,повторіть спробу");
                 in.next();
             }
             correct=1;
-            a = in.nextDouble();
+            a = in.nextLong();
             if(a <=0 || a>1000){correct=0;}
         }while (correct==0);
 
@@ -56,12 +56,12 @@ public class PracticeHomework1 {
 
         do {
             System.out.println("Введіть другий катет трикутника(числа цілі, позитивні, не перевищують 1000).");
-            while (!in.hasNextDouble()) {
+            while (!in.hasNextLong()) {
                 System.err.println("\tСталася помилка! \nНекоректна вхідна інформація,повторіть спробу");
                 in.next();
             }
             correct=1;
-            b = in.nextDouble();
+            b = in.nextLong();
             if(b <=0 || b>1000){correct=0;}
         }while (correct==0);
         double c = Math.sqrt((a*a)+(b*b));
