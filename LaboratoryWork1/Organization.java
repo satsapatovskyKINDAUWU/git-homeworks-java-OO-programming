@@ -62,7 +62,7 @@ public class Organization{
         }
         Arrays.sort(new ArrayList[]{localOrganizations});
         for(int i =0;i<localOrganizations.size();i++){
-            System.out.println("Компанія #"+(i+1)+"|Назва: "+localOrganizations.get(i).name + "|Адреса: "+localOrganizations.get(i).address+"|Директор/СЕО: "+localOrganizations.get(i).director+"|Тел.номер: "+localOrganizations.get(i).number);
+            System.out.println("Організація #"+(i+1)+"|Назва: "+localOrganizations.get(i).name + "|Адреса: "+localOrganizations.get(i).address+"|Директор/СЕО: "+localOrganizations.get(i).director+"|Тел.номер: "+localOrganizations.get(i).number);
         }
 
 
@@ -84,7 +84,7 @@ public class Organization{
            correct=1;
            choose = in.nextInt();
            if(choose <1 || choose>localOrganizations.size()){
-               System.err.println("!!!ПОМИЛКА!!!Ви не можете обрати неїснуючу компанію");correct=0;}
+               System.err.println("!!!ПОМИЛКА!!!Ви не можете обрати неїснуючу організацію");correct=0;}
        }while (correct==0);
        int foryou = choose-1;
        localOrganizations.remove(foryou);
@@ -100,21 +100,25 @@ public class Organization{
         Scanner addOrg = new Scanner(System.in);
 
 
-        System.out.println("Отже,ви рішили добавити нову компанію,впишіть все необхідне по черзі");
-        System.out.println("Введіть назву компанї:");
+        System.out.println("Отже,ви рішили добавити нову організацію,впишіть все необхідне по черзі");
+        System.out.println("Введіть назву організації:");
         this.name = addOrg.nextLine();
-        System.out.println("Введіть адресу компанії:");
+        System.out.println("Введіть адресу організації:");
         this.address = addOrg.nextLine();
-        System.out.println("Введіть директора/СЕО компанії:");
+        System.out.println("Введіть директора/СЕО організації:");
         this.director = addOrg.nextLine();
-        System.out.println("Введіть телефон компанії:");
+        System.out.println("Введіть телефон організації:");
         this.number = addOrg.nextLine();
         Organization organization=new Organization(name,address,director,number);
         localOrganizations.add(organization);
         if(!(localOrganizations.size() <=1)) {
             sortEM();
         }
+        System.out.println();
+
         System.out.println("Ви успішно добавили компанію "+name+ "  Адреса:"+address+"  Директор/СЕО:"+ director+"  Тел.номер:"+number);
+
+        System.out.println();
 
     }
 

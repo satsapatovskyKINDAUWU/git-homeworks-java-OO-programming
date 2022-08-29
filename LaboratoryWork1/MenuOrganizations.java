@@ -11,7 +11,7 @@ public class MenuOrganizations {
 
 
 
-        System.out.println("Вітаємо у програмі для запису та зберігання інформації щодо компаній");
+        System.out.println("Вітаємо у програмі для запису та зберігання інформації щодо організацій");
         Thread.sleep(300);
         System.out.println(menu);
         do {
