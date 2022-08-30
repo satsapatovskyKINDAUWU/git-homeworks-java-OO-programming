@@ -297,6 +297,6 @@ public class Helper {
         for (int i = 1;i<=a;i++){
             sa*=i;
         }
-        System.out.println("Числове значення виразу ["+a+"!] = "+sa);
+        System. out.println("Числове значення виразу ["+a+"!] = "+sa);
     }
 }
