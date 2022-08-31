@@ -1,10 +1,19 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class MenuOrganizations {
 
     Organization specialForMenu = new Organization("#","Адреса","Директор/СЕО","Тел.номер");
-   public void callMenu() throws InterruptedException {
-        String menu = "Виберіть,що бажаєте зробити, ввівши цифру, з меню нижче\n[1]Подивитись список організацій\n[2]Додати організацію\n[3]Видалити організацію\n[4]Закрити програму";
+    public void callMenu() throws InterruptedException {
+
+        String menu = "Виберіть,що бажаєте зробити, ввівши цифру, з меню нижче\n[1]Подивитись список організацій\n[2]Додати організацію\n[3]Видалити організацію\n[4]Закрити програму\n";
         Scanner in = new Scanner(System.in);
         int a;
         int correct = 0;
@@ -31,18 +40,35 @@ public class MenuOrganizations {
                 specialForMenu.showAllOrganization();
                 callMenu();
 
+
             case 2:
 
                 specialForMenu.addNewOrganization();
                 callMenu();
 
+
             case 3:
                 specialForMenu.deleteOrganization();
                 callMenu();
 
-            case 4:
-                break; 
+            case(4):
+                exit();
         }
+    }
+
+    static void turnOn() throws LineUnavailableException, UnsupportedAudioFileException, IOException{
+        File file = new File("musicforwaiting.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+        clip.start();
+        clip.loop(20000);
 
     }
+
+    void exit(){
+        System.out.println("Хай щастить!");
+        System.exit(0);
+    }
+
 }
