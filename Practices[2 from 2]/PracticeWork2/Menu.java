@@ -1,5 +1,13 @@
 import java.io.Console;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Menu {
 
@@ -30,7 +38,18 @@ public class Menu {
             if(menuchooser==6){specialForMenu.tenTimesTask();callMenu();}
             if(menuchooser==7){specialForMenu.onlyFive();callMenu();}
             if(menuchooser==8){specialForMenu.randomBig();callMenu();}
-            if(menuchooser==9){}
+            if(menuchooser==9){System.exit(0);}
+        }
+
+
+        void turnOn() throws UnsupportedAudioFileException, IOException, LineUnavailableException{
+            File file = new File("musicforwaiting.wav");
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioStream);
+            clip.start();
+            clip.loop(20000);
+
         }
     }
 
